@@ -1,0 +1,69 @@
+#include <iostream>
+#include <vector>
+#include <string_view>
+#include <cstring>
+#include <iostream>
+#include <string>
+using namespace std;
+int verificarProducto(long int producto){
+    // initializer list
+  vector<long int> productos = {8949899430, 7653512593, 9383867373,
+88392904209};
+  // ranged loop
+  for (const long int& i : productos) {
+    if(strcmp(i,producto) == 0){
+        cout<< "Su producto tiene un descuento del 20%";
+        return 1;
+    }
+  }
+  return 0;
+}
+
+
+int verificarRifa(long int producto, long int almacen){
+    // initializer list
+  vector<long int> elegibles = {894985943020763, 165331255320221,
+248386737320130, 183923092220561};
+  // ranged loop
+  for (const long int& i : elegibles) {
+    if(strcmp(i,producto) == 0){
+        cout<< "Su producto puede participar de la rifa";
+        return 1;
+    }
+  }
+  return 0;
+}
+
+
+int main()
+{
+    //Variables
+    string codigobarraproducto = "";
+    string codigoalmacen = "";
+    cout<< "Digite el codigo de barras de un producto: ";
+    cin>> codigobarraproducto;
+    while(codigobarraproducto.size() != 20){
+        cout<< "El tamaño del codigo de barras esta incorrecto 'Debe ser de 20 caracteres', por favor digitelo nuevamente";
+        cin >> codigobarraproducto;
+    }
+    cout<< "Digite el codigo del almacen: ";
+    cin>> codigoalmacen;
+    
+    string prefijoalmacen = codigoalmacen.substr(0, 2);
+
+    
+    
+    while(codigoalmacen.size() != 5 ){
+        cout<< "El tamaño del codigo del almacen esta incorrecto 'Debe ser de 05 caracteres' o el prefijo del almacen esta mal escrito, por favor digitelo nuevamente";
+        cin >> codigoalmacen;
+        prefijoalmacen = codigoalmacen.substr(0, 2);
+
+    }
+    
+    //int verificacion = verificarProducto(codigobarraproducto);
+    
+    return 0;
+}
+
+
+
