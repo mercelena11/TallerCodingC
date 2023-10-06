@@ -27,7 +27,7 @@ int verificarRifa(long int producto, long int almacen){
   // ranged loop
   for (const long int& i : elegibles) {
     if(strcmp(i,producto) == 0){
-        cout<< "Su producto puede participar de la rifa";
+        printf("Su producto puede participar de la rifa");
         return 1;
     }
   }
@@ -40,22 +40,22 @@ int main()
     //Variables
     string codigobarraproducto = "";
     string codigoalmacen = "";
-    cout<< "Digite el codigo de barras de un producto: ";
-    cin>> codigobarraproducto;
+    printf("Digite el codigo de barras de un producto: ");
+    scanf(codigobarraproducto);
     while(codigobarraproducto.size() != 20){
-        cout<< "El tamaño del codigo de barras esta incorrecto 'Debe ser de 20 caracteres', por favor digitelo nuevamente";
-        cin >> codigobarraproducto;
+        printf("El tamaño del codigo de barras esta incorrecto 'Debe ser de 20 caracteres', por favor digitelo nuevamente");
+        scanf(codigobarraproducto);
     }
-    cout<< "Digite el codigo del almacen: ";
-    cin>> codigoalmacen;
+    printf("Digite el codigo del almacen: ");
+    scanf(codigoalmacen);
     
     string prefijoalmacen = codigoalmacen.substr(0, 2);
 
     
     
     while(codigoalmacen.size() != 5 ){
-        cout<< "El tamaño del codigo del almacen esta incorrecto 'Debe ser de 05 caracteres' o el prefijo del almacen esta mal escrito, por favor digitelo nuevamente";
-        cin >> codigoalmacen;
+        printf("El tamaño del codigo del almacen esta incorrecto 'Debe ser de 05 caracteres' o el prefijo del almacen esta mal escrito, por favor digitelo nuevamente");
+        scanf(codigoalmacen);
         prefijoalmacen = codigoalmacen.substr(0, 2);
 
     }
